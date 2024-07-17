@@ -1,0 +1,43 @@
+@use '../base/variables'as v;
+@use '../base/mixins'as m;
+
+.container-header {
+   height: 12vh;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   // box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.header-title {
+   font-family: v.$text_font;
+   font-size: 2rem;
+   color: v.$gray;
+   margin-left: 2rem;
+}
+
+.header-counter {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   background-color: v.$primary-light;
+   width: 20%;
+   height: 35%;
+   border-radius: 2rem;
+   margin-right: 2rem;
+
+   p {
+      color: v.$blueish-gray;
+      font-weight: bold;
+      background-color: v.$white;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      margin: 0 auto;
+   }
+}
+
+#button-start{
+   @include m.botton(v.$primary, v.$white, 35%, 70%);
+   margin: 0
+}

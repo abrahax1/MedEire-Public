@@ -1,0 +1,47 @@
+@use '../base/mixins'as m;
+@use '../base/variables'as v;
+
+.contain__actionsBar {
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem auto;
+
+    .contain__actionBar-find {
+        input {
+            @include m.inputText(50%, 100%, 3rem, v.$primary);
+        }
+    }
+}
+
+.contain__actionBar-actions {
+    select {
+        width: 100%;
+        background-color: v.$primary;
+        color: v.$white;
+        border-radius: 3rem;
+        border: none;
+    }
+}
+
+.contain__actionBar-btnActions{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    button{
+        @include m.botton(v.$primary, v.$white, 100%,3rem);
+        margin: 0
+    }
+
+    svg{
+        width: 30px;
+        color: v.$gray;
+    }
+
+    .v-line{
+        border-left: 2px solid v.$gray;
+        height:2rem;
+       }
+}

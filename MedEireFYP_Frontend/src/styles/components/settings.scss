@@ -1,0 +1,64 @@
+@use '../base/mixins'as m;
+@use '../base/variables'as v;
+
+.Settings form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Settings label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.Settings select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.Settings p {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.Settings li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.Settings button {
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    margin-top: 10px;
+}
+
+.Settings button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+.Settings button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+.Settings button[type="button"] {
+    background-color: #f44336;
+    color: white;
+}
+
+.Settings button[type="button"]:hover {
+    background-color: #c92e1e;
+}

@@ -1,0 +1,75 @@
+@use 'variables'as v;
+
+/** Media Queries **/
+@mixin mobile {
+    @media (min-width: 150px) and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 768px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1024px) and (max-width: 2000px) {
+        @content;
+    }
+}
+
+
+@mixin botton($bgColor, $textColor, $width, $height) {
+    background-color: $bgColor;
+    margin: 3rem auto;
+    color: $textColor;
+    text-align: center;
+    font-size: small;
+    font-family: v.$main_font;
+    display: inline-block;
+    font-weight: 300;
+    border: none;
+    border-radius: 2rem;
+    transition-property: background-color;
+    transition-duration: .3s;
+    width: $width;
+    height: $height;
+
+    &:hover {
+        background-color: darken($bgColor, 20%);
+        cursor: pointer;
+    }
+}
+
+@mixin inputText($heigth, $width, $border, $color) {
+    height: $heigth;
+    width: $width;
+    border-radius: $border;
+    margin: 0 auto;
+    border: none;
+
+    &::placeholder {
+        transform: translateY(0px);
+        transition: .5s;
+    }
+
+    &:hover,
+    &:focus,
+    &:active:focus {
+        color: $color;
+        outline: none;
+
+        &::placeholder {
+            color: $color;
+            position: relative;
+            transform: translateX(30%);
+        }
+    }
+}
+
+@mixin grid($columns, $spaced) {
+    display: grid;
+    gap: $spaced;
+    grid-template-columns: repeat($columns, 1fr);
+}

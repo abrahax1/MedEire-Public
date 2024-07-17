@@ -1,0 +1,239 @@
+@use "../base/mixins" as m;
+@use "../base/variables" as v;
+
+// I used the form from https://formbold.com/templates/appointment-form
+.container-app {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.formbold-mb-5 {
+  margin-bottom: 20px;
+}
+
+.formbold-pt-3 {
+  padding-top: 12px;
+}
+
+.formbold-main-wrapper {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    padding-bottom: 0.5em;
+  }
+}
+
+.formbold-form-wrapper {
+  margin: 0 auto;
+  max-width: 550px;
+  width: 100%;
+  background: v.$white;
+}
+.formbold-form-label {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  color: v.$blueish-gray;
+  margin-bottom: 12px;
+}
+
+.formbold-form-input {
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: 1px solid v.$lightGray;
+  background: v.$white;
+  font-weight: 500;
+  font-size: 16px;
+  color: v.$darkGray;
+  outline: none;
+  padding-right: 5em;
+
+  &.long {
+    height: 100px;
+    max-width: 100%;
+  }
+}
+.formbold-form-input:focus {
+  border-color: v.$primary-dark;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.formbold-btn {
+  text-align: center;
+  font-size: 16px;
+  border-radius: 6px;
+  padding: 14px 32px;
+  border-color: transparent;
+  font-weight: 600;
+  background-color: v.$primary;
+  color: v.$white;
+  width: 100%;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    background-color: v.$blue;
+  }
+
+  &.delete-btn {
+    background-color: v.$red;
+
+    &:hover {
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+      background-color: v.$dark-red;
+    }
+  }
+
+  &.edit-btn {
+    background-color: v.$green;
+
+    &:hover {
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+      background-color: v.$dark-green;
+    }
+  }
+
+  &.cancel-btn {
+    background-color: v.$orange;
+
+    &:hover {
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+      background-color: v.$dark-orange;
+    }
+  }
+}
+
+.custom-time-picker {
+  position: relative;
+
+  .formbold-form-input {
+    height: 3em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+}
+
+.custom-time-picker .custom-time-picker-icon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.custom-time-picker input[type="time"]::-webkit-time-picker-indicator {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  margin-left: 2em;
+  margin-right: -5em;
+}
+
+input[type="date"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.formbold--mx-3 {
+  opacity: 1;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+.formbold-px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.flex {
+  display: flex;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.w-full {
+  width: 100%;
+}
+
+@include m.mobile {
+  .container-app {
+    width: 90%;
+  }
+
+  .formbold-mb-5 {
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 540px) {
+  .sm\:w-half {
+    width: 50%;
+  }
+}
+
+// ** Update Appointments Section ** //
+.appointment_section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  align-content: center;
+}
+
+.appointment_taital {
+  width: 100%;
+  font-size: 40px;
+  color: v.$black;
+  font-weight: bold;
+  text-align: center;
+}
+
+.container-appointment {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 5rem;
+}
+
+.appointment_section_2 {
+  background-color: v.$white;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.appList {
+  width: 250px;
+}
+
+.delete-popup-content h4 {
+  font-weight: bold !important;
+}
+
+@include m.mobile {
+  .container-appointment {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 1rem;
+  }
+  .appList {
+    width: 100%;
+  }
+}

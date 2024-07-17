@@ -1,0 +1,40 @@
+@use './variables' as v;
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    padding: 0px;
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    height: 100%;
+}
+body {
+    font-family: v.$text_font !important;
+    font-size: 1.6rem !important;
+    height: 100%;
+    overflow-y: auto;
+}
+
+#root{
+    overflow-y: auto;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+
+.contain-alert p{
+    font-size: 1.8rem;
+}
+
+h1 {
+    font-weight: bold !important;
+    font-size: 40px !important;
+    letter-spacing: 0 !important;
+    text-align: center !important;
+}

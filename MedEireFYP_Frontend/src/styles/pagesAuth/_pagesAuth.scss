@@ -1,0 +1,118 @@
+@use '../base/mixins'as m;
+@use '../base/variables'as v;
+
+.container {
+  width: 400px;
+  overflow: hidden;
+  margin: 0 auto;
+
+  @include m.tablet {
+    width: 350px;
+  }
+}
+
+.form-contain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  input {
+    height: 80px;
+    width: 90%;
+    margin: 0 auto;
+    border: none;
+    font-size: large;
+
+    &::placeholder {
+      transform: translateY(0px);
+      transition: .5s;
+    }
+
+    &:hover,
+    &:focus,
+    &:active:focus {
+      color: v.$darkGray;
+      outline: none;
+
+      &::placeholder {
+        color: v.$darkGray;
+        position: relative;
+        transform: translateY(-20px);
+      }
+    }
+  }
+
+  input[type="submit"] {
+
+    &:hover {
+      color: v.$white
+    }
+  }
+
+  .email,
+  .pwd,
+  .name,
+  .surname,
+  .pps {
+    border-bottom: 1px solid v.$primary;
+    padding-left: 20px;
+    font-family: v.$main_font;
+    color: v.$gray;
+    font-weight: 300;
+    transition: .5s;
+  }
+}
+
+
+
+.error {
+  border-bottom: 1px solid v.$red;
+  transition: .5s;
+
+  &::placeholder {
+    color: v.$red;
+  }
+}
+
+input[type="submit"] {
+  @include m.botton(v.$primary, v.$white, 50%, 3rem)
+}
+
+.link-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+
+  p {
+    font-family: v.$main_font;
+    color: v.$darkGray;
+  }
+
+  span {
+    color: v.$primary;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+}
+
+
+.contain-alert {
+  display: block;
+  margin: 0 auto;
+  font-family: v.$main_font;
+  text-transform: uppercase;
+  font-size: small;
+  text-align: center;
+
+  .error-alert {
+    color: v.$red;
+  }
+
+  .valid-alert {
+    color: v.$green;
+  }
+}

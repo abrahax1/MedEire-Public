@@ -1,0 +1,12 @@
+-- CreateTable
+CREATE TABLE `Chat` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `userID` INTEGER NOT NULL,
+    `message` VARCHAR(191) NOT NULL,
+    `receiverID` INTEGER NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- AddForeignKey
+ALTER TABLE `Chat` ADD CONSTRAINT `Chat_userID_fkey` FOREIGN KEY (`userID`) REFERENCES `UserRoles`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;

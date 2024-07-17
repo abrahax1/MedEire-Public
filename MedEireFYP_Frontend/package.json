@@ -1,0 +1,37 @@
+{
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "devextreme": "^22.2.4",
+    "devextreme-react": "^22.2.4",
+    "react": "^18.0.0",
+    "react-bootstrap-time-picker": "^2.0.1",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0",
+    "react-search-box": "^3.0.0",
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.6.1",
+    "use-debounce": "^9.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "autoprefixer": "^10.4.7",
+    "devextreme-themebuilder": "^22.1.3",
+    "dotenv": "^16.0.3",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.53.0",
+    "vite": "^2.9.9"
+  }
+}

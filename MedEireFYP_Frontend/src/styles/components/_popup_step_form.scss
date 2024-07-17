@@ -1,0 +1,70 @@
+@use '../base/variables'as v;
+@use '../base/mixins'as m;
+
+.contain__form-popup {
+    height: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.current-item-step {
+    background-color: v.$primary-light;
+    color: v.$white;
+    font-size: 15px;
+}
+
+.contain__form-popup-steps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+    border: 2px solid v.$primary-light;
+    border-radius: 1rem;
+    padding: 3rem;
+
+    a {
+        color: v.$textColor;
+        cursor: pointer;
+        width: 100%;
+        padding: 1rem;
+        margin: 0;
+        text-align: center;
+        transition: all 0.3s ease;
+        border-radius: 1rem;
+
+        &:hover {
+            color: v.$white;
+            background-color: v.$primary-light;
+            font-size: 15px;
+        }
+    }
+}
+
+.contain__form--item {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contain__form-popup-primary {
+    width: 100%;
+    height: 70%;
+}
+
+.contain__form-popup-buttons {
+    display: flex;
+    margin-top: 23rem;
+    gap: 2rem;
+}
+
+.contain__form-popup-next-previous {
+    display: flex;
+    justify-content: center;
+    gap: 30rem;
+    align-items: center;
+    margin-top: -20rem;
+}

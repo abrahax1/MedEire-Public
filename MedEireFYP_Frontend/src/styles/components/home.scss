@@ -1,0 +1,42 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.test_scheduler {
+  padding: 4rem;
+  background-color: v.$white;
+  border-radius: 1rem;
+}
+
+.container_scheduler-function {
+  padding: 2rem;
+}
+
+.container_scheduler-function .dx-scheduler-appointment {
+  background-color: v.$primary;
+}
+
+.container_scheduler-function .dx-scheduler-appointment-draggable {
+  pointer-events: none !important;
+}
+
+.container_scheduler-function .dx-scheduler-appointment-content {
+  padding: 0 0;
+}
+
+@include m.mobile {
+  .test_scheduler{
+    padding: 1rem;
+  }
+
+  .container_scheduler-function {
+    padding: 10px;
+  }
+
+  .container_scheduler-function .dx-button-content {
+    justify-content: initial;
+  }
+
+  .container_scheduler-function .dx-scheduler-navigator-next {
+    left: -75px;
+  }
+}

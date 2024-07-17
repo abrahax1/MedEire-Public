@@ -1,0 +1,128 @@
+@use './variables'as v;
+@use './mixins'as m;
+
+
+.container__app {
+    width: 95%;
+    margin: auto auto;
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+    border-collapse: collapse;
+}
+
+.container__app-element {
+    display: flex;
+    gap: 2rem;
+}
+
+.container__app-element-box {
+    width: 100%;
+    margin: 2rem auto;
+    box-shadow: 0px 0px 30px -4px rgba(0, 0, 0, 0.1);
+    background-color: v.$white;
+    border-radius: 2rem;
+    border-collapse: collapse;
+    padding: 4rem;
+}
+
+.first-box>div {
+    padding: 3px;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: v.$primary-light;
+        box-shadow: 0px 0px 30px -4px rgba(0, 0, 0, 0.1);
+
+        p,
+        h3 {
+            color: v.$white;
+        }
+
+    }
+}
+
+.second-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+    margin: 0 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+.second-box>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    div {
+        padding: 3px;
+        border-radius: 1rem;
+        margin: 0.5rem;
+        width: 100%;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: v.$primary-light;
+            box-shadow: 0px 0px 30px -4px rgba(0, 0, 0, 0.1);
+
+            p {
+                color: v.$white;
+
+            }
+
+        }
+    }
+}
+
+.third-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.third-box>div {
+    padding: 3px;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: v.$primary-light;
+        box-shadow: 0px 0px 30px -4px rgba(0, 0, 0, 0.1);
+
+        p,
+        h3 {
+            color: v.$white;
+        }
+    }
+}
+
+.title-primary {
+    font-family: v.$main_font;
+    font-weight: bold;
+    text-align: center;
+    color: v.$primary;
+}
+
+.title-secondary {
+    font-family: v.$main_font;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: v.$primary;
+}
+
+.p-normal {
+    font-family: v.$main_font;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    color: v.$gray;
+}

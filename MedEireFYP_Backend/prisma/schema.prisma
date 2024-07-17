@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+// connection to DB
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// Model for db
+model User {
+  id           Int            @id @default(autoincrement())
+  email        String         @unique
+  password     String
+  name         String
+  surname      String
+  token        String
+  confirm      Boolean
+  pps          String         @unique
+  appointments Appointments[]
+  userRoles    UserRoles[]
+}
+
+model UserRoles {
+  user   User  @relation(fields: [userId], references: [id])
+  role   Roles @relation(fields: [roleId], references: [id])
+  id     Int   @id @default(autoincrement())
+  roleId Int
+  userId Int
+
+  @@unique([roleId, userId])
+}
+
+model Roles {
+  userRoles   UserRoles[]
+  id          Int         @id @default(autoincrement())
+  description String
+}
+
+model Appointments {
+  user            User     @relation(fields: [userID], references: [id])
+  id              Int      @id @default(autoincrement())
+  userID          Int
+  createdAt       DateTime @default(now())
+  appointmentDate DateTime
+  triage          String
+  doctorName      String
+  description     String
+}
+
+model Chat {
+  chatID    Int      @id @default(autoincrement())
+  receiverID Int
+  senderID  Int
+  messages Message[]
+}
+
+model Message {
+  messageID       Int     @id @default(autoincrement())
+  message         String
+  senderID    Int
+  dateCreate  DateTime
+  chat        Chat    @relation(fields: [chatID], references: [chatID])
+  chatID      Int
+}

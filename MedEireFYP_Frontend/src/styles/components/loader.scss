@@ -1,0 +1,79 @@
+.chatApp__loaderWrapper {
+    margin: 80px auto;
+    text-align: center;
+  }
+  .chatApp__loaderText {
+    color: #4870df;
+    font-weight: bold;
+  }
+  .chatApp__loader,
+  .chatApp__loader::before,
+  .chatApp__loader::after {
+    border-radius: 1em;
+    width: 1em;
+    height: 1em;
+    animation: loading 1.8s infinite ease-in-out;
+  }
+  .chatApp__loader {
+    margin: auto;
+    color: #4870df;
+    font-size: 12px;
+    position: relative;
+    animation-delay: -0.16s;
+  }
+  .chatApp__loader::before,
+  .chatApp__loader::after {
+    content: "";
+    position: absolute;
+    top: 0;
+  }
+  .chatApp__loader::before {
+    left: -1.5em;
+    animation-delay: -0.32s;
+  }
+  .chatApp__loader::after {
+    left: 1.5em;
+  }
+  
+  .chatApp__convButton--loading {
+    cursor: wait;
+    background-color: #4870df;
+  }
+  .chatApp__convButton--loading:hover {
+    background-color: #4870df;
+  }
+  .chatApp__convButton--loading::before,
+  .chatApp__convButton--loading::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    margin: auto;
+    border-radius: 40px;
+    background-color: #fff;
+  }
+  .chatApp__convButton--loading::after {
+    animation: loadSendMessage 1.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+  .chatApp__convButton--loading i {
+    display: none;
+  }
+  
+  @keyframes loading {
+    0%,
+    80%,
+    100% {
+      box-shadow: 0 1em 0 -1.3em;
+    }
+    40% {
+      box-shadow: 0 1em 0 0;
+    }
+  }
